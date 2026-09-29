@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chen Yulin · Homepage</title>
+  <meta name="description" content="Personal homepage of Chen Yulin — 个人主页">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <style>
+    :root {
+      --bg: #f7f5f0;
+      --card: #ffffff;
+      --ink: #1f2328;
+      --muted: #5f6670;
+      --accent: #2f6f5e;
+      --line: #e3dfd6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16181b;
+        --card: #1f2226;
+        --ink: #e8e6e1;
+        --muted: #9ea4ab;
+        --accent: #7cc3ad;
+        --line: #2e3237;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+    header, main, footer { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem; padding-bottom: 1.5rem;
+    }
+    header nav a { color: var(--muted); text-decoration: none; margin-right: 1.2rem; font-size: .95rem; }
+    header nav a:hover { color: var(--accent); }
+    .lang-toggle {
+      border: 1px solid var(--line); background: var(--card); color: var(--ink);
+      border-radius: 999px; padding: .35rem .9rem; cursor: pointer; font-size: .9rem;
+    }
+    .lang-toggle:hover { border-color: var(--accent); }
+    .hero { display: flex; gap: 1.5rem; align-items: center; padding: 2.5rem 0 2rem; }
+    .avatar {
+      flex: none; width: 96px; height: 96px; border-radius: 50%;
+      background: var(--accent); color: var(--bg);
+      display: grid; place-items: center; font-size: 2.2rem; font-weight: 700;
+    }
+    h1 { margin: 0; font-size: 2rem; line-height: 1.2; }
+    .tagline { margin: .4rem 0 0; color: var(--muted); }
+    section { padding: 1.5rem 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 1.1rem; letter-spacing: .04em; color: var(--accent); margin: 0 0 .8rem; }
+    .cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem;
+    }
+    .card h3 { margin: 0 0 .3rem; font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .card a { color: var(--accent); }
+    ul.contact { list-style: none; padding: 0; margin: 0; }
+    ul.contact li { margin: .3rem 0; }
+    ul.contact a { color: var(--accent); }
+    footer { padding-top: 2rem; padding-bottom: 3rem; color: var(--muted); font-size: .85rem; }
+    /* Show only the active language */
+    html[lang="en"] [lang="zh"], html[lang="zh"] [lang="en"] { display: none; }
+    @media (max-width: 520px) {
+      .hero { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#about"><span lang="en">About</span><span lang="zh">关于</span></a>
+      <a href="#projects"><span lang="en">Projects</span><span lang="zh">项目</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="zh">联系</span></a>
+    </nav>
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language / 切换语言">中文</button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="avatar" aria-hidden="true">C</div>
+      <div>
+        <h1><span lang="en">Hi, I'm Chen Yulin</span><span lang="zh">你好，我是 Chen Yulin</span></h1>
+        <p class="tagline">
+          <span lang="en">Researcher · Lifelong learner · Building tools for literature review</span>
+          <span lang="zh">研究者 · 终身学习者 · 正在打造文献综述工具</span>
+        </p>
+      </div>
+    </div>
+
+    <section id="about">
+      <h2><span lang="en">ABOUT ME</span><span lang="zh">关于我</span></h2>
+      <p lang="en">
+        Welcome to my personal homepage. I'm interested in research methods, academic writing, and
+        using AI to make systematic literature reviews faster and more reliable. Replace this paragraph
+        with a few sentences about who you are and what you do.
+      </p>
+      <p lang="zh">
+        欢迎来到我的个人主页。我关注研究方法、学术写作，以及如何借助 AI 让系统性文献综述更高效、更可靠。
+        请把这段文字替换成你自己的介绍。
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2><span lang="en">PROJECTS</span><span lang="zh">项目</span></h2>
+      <div class="cards">
+        <div class="card">
+          <h3><span lang="en">Literature Review Skill</span><span lang="zh">文献综述技能</span></h3>
+          <p>
+            <span lang="en">Systematic reviews across PubMed, arXiv, Semantic Scholar and more, with verified citations.</span>
+            <span lang="zh">跨 PubMed、arXiv、Semantic Scholar 等数据库进行系统性综述，并自动核验引用。</span>
+            <br><a href="/SKILL.md"><span lang="en">Read more →</span><span lang="zh">了解更多 →</span></a>
+          </p>
+        </div>
+        <div class="card">
+          <h3><span lang="en">Citation Styles Guide</span><span lang="zh">引用格式指南</span></h3>
+          <p>
+            <span lang="en">Reference notes for APA, Nature, Vancouver and other citation styles.</span>
+            <span lang="zh">APA、Nature、Vancouver 等常用引用格式的参考说明。</span>
+            <br><a href="/references/citation_styles.md"><span lang="en">Read more →</span><span lang="zh">了解更多 →</span></a>
+          </p>
+        </div>
+        <div class="card">
+          <h3><span lang="en">Your Next Project</span><span lang="zh">你的下一个项目</span></h3>
+          <p>
+            <span lang="en">Add another project here: a paper, a tool, or anything you're proud of.</span>
+            <span lang="zh">在这里添加其他项目：论文、工具，或任何你引以为傲的作品。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2><span lang="en">CONTACT</span><span lang="zh">联系方式</span></h2>
+      <ul class="contact">
+        <li><span lang="en">Email:</span><span lang="zh">邮箱：</span> <a href="mailto:you@example.com">you@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/">github.com/your-username</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year">2026</span> Chen Yulin
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('lang-toggle');
+      function setLang(lang) {
+        root.lang = lang;
+        btn.textContent = lang === 'en' ? '中文' : 'English';
+        document.title = lang === 'en' ? 'Chen Yulin · Homepage' : 'Chen Yulin · 个人主页';
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+      }
+      var saved = null;
+      try { saved = localStorage.getItem('lang'); } catch (e) {}
+      var initial = saved || ((navigator.language || '').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+      setLang(initial);
+      btn.addEventListener('click', function () { setLang(root.lang === 'en' ? 'zh' : 'en'); });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
